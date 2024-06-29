@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Shawn"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-12 02:34:49 PM"/>
+        <attribute name="created" value="U2hhd247REVTS1RPUC1BTDhJMEZMOzIwMjEtMTItMTI7MDE6NTU6NTYgUE07MjgzNw=="/>
+        <attribute name="edited" value="U2hhd247REVTS1RPUC1BTDhJMEZMOzIwMjEtMTItMTI7MDI6MzQ6NDkgUE07MTsyOTQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to the Family Dinner Catering Service.&quot;" newline="True"/>
+            <declare name="adultPrices" type="Real" array="True" size="4"/>
+            <declare name="kidPrice" type="Real" array="True" size="4"/>
+            <declare name="sum, sum2, charity, total" type="Real" array="False" size=""/>
+            <assign variable="sum" expression="0.0"/>
+            <assign variable="sum2" expression="0.0"/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <assign variable="adultPrices[0]" expression="10.00"/>
+            <assign variable="adultPrices[1]" expression="10.00"/>
+            <assign variable="adultPrices[2]" expression="15.00"/>
+            <assign variable="adultPrices[3]" expression="7.50"/>
+            <assign variable="kidPrice[0]" expression="7.50"/>
+            <assign variable="kidPrice[1]" expression="7.50"/>
+            <assign variable="kidPrice[2]" expression="8.50"/>
+            <output expression="&quot;Meal Sales for Adults&quot;" newline="True"/>
+            <for variable="counter" start="0" end="3" direction="inc" step="1">
+                <output expression="&quot;Adult Catered Meal Prices: $&quot; &amp;adultPrices[counter]" newline="True"/>
+                <assign variable="sum" expression="sum+adultPrices[counter]"/>
+            </for>
+            <output expression="&quot;Total Adult Catered Prices are $&quot; &amp;sum" newline="True"/>
+            <output expression="&quot;Meal Sales for Childeren&quot;" newline="True"/>
+            <for variable="counter" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;Child Catered Meal Prices: $&quot; &amp;kidPrice[counter]" newline="True"/>
+                <assign variable="sum2" expression="sum2+kidPrice[counter]"/>
+            </for>
+            <output expression="&quot;Total Child Meal Prices are $&quot; &amp;sum2" newline="True"/>
+            <assign variable="total" expression="sum+sum2"/>
+            <output expression="&quot;Total Cost for Catered Meals are $&quot; &amp;total" newline="True"/>
+            <assign variable="charity" expression="total*0.45"/>
+            <output expression="&quot;The total donation for the Charity is $&quot; &amp;charity" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
